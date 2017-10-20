@@ -19,7 +19,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[nginx::default]
+      - recipe[mysql::default]
     verifier:
       inspec_tests:
         - test/smoke/default
