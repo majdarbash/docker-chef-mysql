@@ -15,3 +15,8 @@ On your local machine try:
 > docker run --name ma_testdb -p 3306:3306 -d majdarbash/mysql
 
 > docker pull majdarbash/mysql
+
+
+Default passwords:
+username: root
+password: root
