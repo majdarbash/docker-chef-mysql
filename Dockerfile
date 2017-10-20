@@ -17,6 +17,10 @@ ADD ./cookbooks /var/chef/cookbooks
 RUN cd / && /opt/chef/embedded/bin/berks vendor /var/chef/cookbooks
 RUN chef-solo -c /var/chef/solo.rb -j /var/chef/solo.json
 
-EXPOSE 3306
+COPY ./startup.sh /root/startup.sh
+RUN chmod +x /root/startup.sh
 
-CMD ["/usr/bin/supervisord"]
+ENTRYPOINT ["/root/startup.sh"]
+
+EXPOSE 3306
+CMD ["/usr/bin/mysqld_safe"]
